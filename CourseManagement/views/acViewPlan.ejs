@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="/stylesheets/bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="/javascripts/jquery.min.js"> </script>
+<!--web_fonts-->
+<!--/web_fonts-->
+<!--start-smoth-scrolling-->
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+</head>
+<body>
+<!--header-->
+<div id="home" class="banner">
+	<div class="container">
+		<div class="label-1"> </div>
+		<div class="top-menu">
+		<span class="menu"> </span> 
+			<ul class="nav">
+                    <li><a href="/academic/teachPlan">发布界面</li>
+					<li><a href="/academic">教务处主页</a></li>
+                    <li><a href="/academic/viewPlan">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改教学计划
+                        </a></li>
+                    <li><a href="/">退出</a></li>
+				</ul>
+				<div class="logo">
+					<a href="#"><img src="../images/taiyuan.png" /></a>
+				</div>
+				<div class="clearfix"> </div>
+	</div>	
+			 <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->	
+			<div id="banner-top" class="banner-top">		  		  
+				<h1><span class="left-icon"> </span>学院课程管理系统<span class="right-icon"> </span><div class="clearfix"> </div></h1>
+				<h2><span class="left-icon"> </span>发布教学计划界面<span class="right-icon"> </span><div class="clearfix"> </div></h2>
+        </div>
+<article>
+    <% if (success) { %>
+    <div align="center"><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div align="center"><%= error %> </div>
+    <% } %>
+</article>
+<br><br>
+<table align="center" width="90%" border="1">
+	<tbody>
+		<caption style="font-size:30px"><strong>教务人员审核通过的授课计划</strong></caption>
+	<tr>
+		<td align="center"><strong>编号</strong></td>
+		<td align="center"><strong>教师编号</strong></td>
+		<td align="center"><strong>课程编号</strong></td>
+		<td align="center"><strong>周学时</strong></td>
+		<td align="center"><strong>详细课程计划</strong></td>
+		<td align="center"><strong>教研室意见</strong></td>
+		<td align="center"><strong>教务人员意见</strong></td>
+		<td align="center"><strong>教务处意见</strong></td>
+        <td align="center"><strong>提交意见</strong></td>
+	</tr>
+	<% for(var i=0;i<result.length;i++){ %>
+        <br>
+	<form method="POST">
+		<tr>
+			<th><%= i+1 %></th>
+			<td align="center"><input name="tid" readOnly="true" size="10" value=<%= result[i].tid %>></td>
+			<td align="center"><input name="course_id" readOnly="true" size="10" value=<%= result[i].course_id %>></td>
+			<td align="center"><input name="wtime" readOnly="true" size="10" value=<%= result[i].wtime %>></td>
+			<td align="center"><%= result[i].note %></td>
+			<td align="center"><input name="cagree" readOnly="true" size="10" value=<%= result[i].cagree %>></td>
+			<td align="center"><input name="wtime" readOnly="true" size="10" value=<%= result[i].ragree %>></td>
+			<td align="center"><input name="wtime" readOnly="true" size="10" value=<%= result[i].aagree %>></td>
+			<td align="center"><button>同意</button></td>
+			<td align="center"><button formaction="/academic/disagree">否定</button></td>
+		</tr>
+	</form>
+		<%}%>
+	</tbody>
+</table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    </div>
+    </body>
+</html>

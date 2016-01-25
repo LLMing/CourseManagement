@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="/stylesheets/bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="/javascripts/jquery.min.js"> </script>
+<!--web_fonts-->
+<!--/web_fonts-->
+<!--start-smoth-scrolling-->
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+</head>
+<body>
+<!--header-->
+<div id="home" class="banner">
+	<div class="container">
+		<div class="label-1"> </div>
+		<div class="top-menu">
+		<span class="menu"> </span> 
+			<ul class="nav">
+					<li><a class="scroll" href="#home">主页</a></li>
+					<li><a class="scroll" href="#about">任务书</a></li>
+					<li><a class="scroll" href="#work">项目人员</a></li>
+					<li><a class="scroll" href="#contact">contact</a></li>
+				</ul>
+				<div class="logo">
+					<a href="#"><img src="images/taiyuan.png" /></a>
+				</div>
+				<div class="clearfix"> </div>
+	</div>	
+			 <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->	
+			<div id="banner-top" class="banner-top">		  		  
+				<h1><span class="left-icon"> </span>理工大学教务系统<span class="right-icon"> </span><div class="clearfix"> </div></h1>
+				<h2><span class="left-icon"> </span>学院课程管理系统<span class="right-icon"> </span><div class="clearfix"> </div></h2>
+        </div>
+         <div id="home" class="banner">
+             <article>
+            <% if (success) { %>
+            <div align="center"><%= success %></div>
+            <% } %>
+            <% if (error) { %>
+            <div align="center"><%= error %> </div>
+            <% } %>
+            </article>
+			<div class="container">
+					 <!-- script-for-menu -->
+				 <!-- script-for-menu -->
+		            <br><br><br><br>
+		            <div class="conatct-form">
+			            <form method="post">
+				            <ul class="form">
+								<li>
+									<input type="text" class="text" name="User_id" value="账号*" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '账号*';}" >
+								</li>
+								<li>
+									<input type="password" class="text" name="User_Password" value="密码*" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '密码*';}" >
+								</li>
+								<div class="sub-button">
+									<input type="submit" value="登 陆">
+								</div>
+							</ul>
+			            </form>
+					</div>
+		    </div>
+    	</div>
+	</div>
+</div>
+<!--/header-->
+<!--work-->
+<div id="work" class="work">
+	<div class="container">
+		<div class="label-3"> </div>
+		<div class="label-4"> </div>
+		<h3><span class="left-icon"> </span>Team<span class="right-icon"> </span><div class="clearfix"> </div></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+		<!--Portfolio-->
+	<div class="project">
+					<div id="portfoliolist">
+						<div class="portfolio" style="display: inline-block; opacity: 1;">
+							<div class="portfolio-wrapper">		
+								<a href="images/sunbofei.jpg" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
+							     <img src="images/sunbofei.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">软件1320班 孙博飞<img src="images/logo.png" /></h2>
+							  	 </div></a>
+			                </div>
+						</div>				
+						<div class="portfolio"  style="display: inline-block; opacity: 1;">
+							<div class="portfolio-wrapper">		
+								<a href="images/zhaoshuzhen.jpg" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
+							     <img src="images/zhaoshuzhen.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">软件1320班 赵淑珍<img src="images/logo.png" /></h2>
+							  	 </div></a>
+			               	</div>
+						</div>		
+						<div class="portfolio"  style="display: inline-block; opacity: 1;">
+							<div class="portfolio-wrapper">		
+								<a href="images/yanrong.gif" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
+							     <img src="images/yanrong.gif" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">软件1320班 闫荣<img src="images/logo.png" /></h2>
+							  	 </div></a>
+			                </div>
+						</div>						
+						<div class="portfolio"  style="display: inline-block; opacity: 1;">
+							<div class="portfolio-wrapper">		
+								<a href="images/yaosai.gif" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
+							     <img src="images/yaosai.gif" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">软件1320班 姚赛<img src="images/logo.png" /></h2>
+							  	 </div></a>
+			                </div>
+						</div>	
+						<div class="portfolio"  style="display: inline-block; opacity: 1;">
+							<div class="portfolio-wrapper">		
+								<a href="images/p5.jpg" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
+							     <img src="images/p5.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">软件1320班 芦雷鸣<img src="images/logo.png" /></h2>
+							  	 </div></a>
+			                </div> 
+						</div>				
+			            <div class="clearfix"> </div>
+			</div>
+</div>
+	<link rel="stylesheet" href="/stylesheets/swipebox.css">
+	<script src="/javascripts/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+<!--/Portfolio-->
+	</div>
+</div>
+<!--/work-->
+<!--about-->
+<div id="about" class="about">
+	<div class="container">
+		<div class="label-5"> </div>
+		<div class="label-6"> </div>
+		<h3><span class="left-icon"> </span>任务书<span class="right-icon">  </span><div class="clearfix"> </div></h3>
+		<p>这是教务处最终公示的教学任务书</p>
+		<br><br>
+		<table align="center" width="90%" border="1">
+			<tbody>
+				<caption style="font-size:30px"><strong>教学任务书界面</strong></caption>
+			<tr>
+				<td align="center"><strong>编号</strong></td>
+				<td align="center"><strong>教师编号</strong></td>
+				<td align="center"><strong>课程编号</strong></td>
+				<td align="center"><strong>周学时</strong></td>
+				<td align="center"><strong>详细课程计划</strong></td>
+			</tr>
+			<% for(var i=0;i<result.length;i++){ %>
+			<form method="POST">
+				<tr>
+					<th><%= i+1 %></th>
+					<td align="center" style="font-size:20px"><%= result[i].tid %></td>
+					<td align="center" style="font-size:20px"><%= result[i].course_id %></td>
+					<td align="center" style="font-size:20px"><%= result[i].wtime %></td>
+					<td align="center" style="font-size:20px"><%= result[i].note %></td>
+				</tr>
+			</form>
+				<%}%>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--contact-->
+<div id="contact" class="contact">
+	<div class="container">
+		<div class="label-7"> </div>
+		<div class="label-8"> </div>
+		<h3><span class="left-icon"> </span>CONTACT<span class="right-icon"> </span><div class="clearfix"> </div></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+		<div class="conatct-form">
+			<ul class="form">
+				<li>
+				<input type="text" class="text" value="Name*" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name*';}" >
+				</li>
+				<li>
+				<input type="text" class="text" value="Email*" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email*';}" >
+				</li>
+				<li>
+				<textarea value="Message*:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Message*';}">Message*</textarea>
+				</li>
+				<div class="sub-button">
+					<input type="submit" value="SEND">
+				</div>
+			</ul>
+		</div>
+		<div class="copyrights">
+		<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+</div>
+<!--/contact-->
+<!--copy-rights-->
+
+<!--copy-rights-->
+</body>
+</html>

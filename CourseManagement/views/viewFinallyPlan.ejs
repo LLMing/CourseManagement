@@ -1,0 +1,26 @@
+<%- include header %>
+<br><br>
+<table align="center" width="90%" border="1">
+	<tbody>
+		<caption style="font-size:30px"><strong>教学任务书界面</strong></caption>
+	<tr>
+		<td align="center"><strong>编号</strong></td>
+		<td align="center"><strong>教师编号</strong></td>
+		<td align="center"><strong>课程编号</strong></td>
+		<td align="center"><strong>周学时</strong></td>
+		<td align="center"><strong>详细课程计划</strong></td>
+	</tr>
+	<% for(var i=0;i<result.length;i++){ %>
+	<form method="POST">
+		<tr>
+			<th><%= i+1 %></th>
+			<td align="center" style="font-size:20px"><input name="tid" readOnly="true" size="10" value=<%= result[i].tid %>></td>
+			<td align="center" style="font-size:20px"><input name="course_id" readOnly="true" size="10" value=<%= result[i].course_id %>></td>
+			<td align="center" style="font-size:20px"><input name="wtime" readOnly="true" size="10" value=<%= result[i].wtime %>></td>
+			<td align="center" style="font-size:20px"><%= result[i].note %></td>
+		</tr>
+	</form>
+		<%}%>
+	</tbody>
+</table>
+<%- include footer %>

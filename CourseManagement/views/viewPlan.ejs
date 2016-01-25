@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="/stylesheets/bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="/javascripts/jquery.min.js"> </script>
+<!--web_fonts-->
+<!--/web_fonts-->
+<!--start-smoth-scrolling-->
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+</head>
+<body>
+<!--header-->
+<div id="home" class="banner">
+	<div class="container">
+		<div class="label-1"> </div>
+		<div class="top-menu">
+		<span class="menu"> </span> 
+			<ul class="nav">
+                    <li><a href="/academic/teachPlan">发布界面</li>
+					<li><a href="/academic">教务处主页</a></li>
+                    <li><a href="viewPlan">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改教学计划
+                        </a></li>
+                    <li><a href="/">退出</a></li>
+				</ul>
+				<div class="logo">
+					<a href="#"><img src="../images/taiyuan.png" /></a>
+				</div>
+				<div class="clearfix"> </div>
+	</div>	
+			 <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->	
+			<div id="banner-top" class="banner-top">		  		  
+				<h1><span class="left-icon"> </span>理工大学教务系统<span class="right-icon"> </span><div class="clearfix"> </div></h1>
+				<h2><span class="left-icon"> </span>学院课程管理系统<span class="right-icon"> </span><div class="clearfix"> </div></h2>
+        </div>
+    <article>
+    <% if (success) { %>
+    <div align="center"><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div align="center"><%= error %> </div>
+    <% } %>
+    </article>
+    <br><br>
+    <table align="center" width="80%" border="1">
+      <tbody>
+      <tr>
+        <td align="center"><strong>编号</strong></td>
+        <td align="center"><strong>课程名称</strong></td>
+        <td align="center"><strong>课程编号</strong></td>
+        <td align="center"><strong>课时</strong></td>
+        <td align="center"><strong>班级类别</strong></td>
+        <td align="center"><strong>班号</strong></td>
+      </tr>
+        <% for(var i=0;i<result.length;i++){ %>
+        <tr>
+            <th><%= i+1 %></th>
+            <td align="center"><%= result[i].course_name %></td>
+            <td align="center"><%= result[i].course_id %></td>
+            <td align="center"><%= result[i].course_time %></td>
+            <td align="center"><%= result[i].category %></td>
+            <td align="center"><%= result[i].class_id %></td>
+        </tr>
+    <%}%>
+      </tbody>
+    </table>
+        <br><br><br><br><br><br>
+    </div>
+    </div>
+    </body>
+</html>
